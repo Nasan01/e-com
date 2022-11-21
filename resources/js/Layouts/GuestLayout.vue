@@ -12,7 +12,7 @@ const logout = () => {
 
 <template>
     <div>
-        <div class="navbar bg-base-100 shadow-lg shadow-black">
+        <div class="navbar bg-base-100 shadow">
             <div class="flex-1">
                 <a class="btn btn-ghost normal-case text-xl">
                     <ApplicationLogo />
