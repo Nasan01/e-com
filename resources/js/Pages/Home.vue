@@ -1,6 +1,9 @@
 <script setup>
 import { Head, Link } from '@inertiajs/inertia-vue3';
 import GuestLayout from '@/Layouts/GuestLayout.vue';
+import LatestProduct from '@/Components/Products/LatestProduct.vue';
+
+const props = defineProps(['latestProducts']);
 
 </script>
 
@@ -8,7 +11,7 @@ import GuestLayout from '@/Layouts/GuestLayout.vue';
     <Head title="Home" />
 
     <GuestLayout>
-        HomePage
+        <LatestProduct :products="props.latestProducts" />
     </GuestLayout>
 
 </template>

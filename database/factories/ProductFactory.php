@@ -17,7 +17,7 @@ class ProductFactory extends Factory
      */
     public function definition()
     {
-        $defaultIllustration = ["default1", "default2", "default3"];
+        $defaultIllustration = ["default1.jpg", "default2.jpg", "default3.jpg"];
 
         return [
             'name' => fake()->words(3, true),
