@@ -9,15 +9,29 @@ export default {
 
     props: ['product'],
 
-    methods: {
-        ...mapMutations(['add']),
-
-        addToCart(e) {
-            this.add(this.product);
+    data() {
+        return {
+            quantity: 1
         }
+    },
+
+    methods: {
+        ...mapMutations(['remove', 'calculateTotal']),
+
+        removeToCart(e) {
+            this.remove(this.product);
+        },
+
+        handleQuantityChange(e) {
+            this.quantity = e.target.value;
+
+            this.calculateTotal({
+                cart: this.product,
+                quantity: this.quantity
+            });
+        },
     }
 }
-
 
 </script>
 
@@ -48,14 +62,24 @@ export default {
                 {{ product.description.slice(0, 35) }} ...
             </h4>
         </div>
+        <div class="m-3 text-xs">
+            <label for="quantity m-2">Quantity : </label>
+            <input
+                type="number"
+                class="w-full px-4 py-1 rounded focus:border-primary"
+                :value="quantity"
+                @input="handleQuantityChange"
+                min="1"
+            />
+        </div>
         <div class="flex h-8">
             <div class="w-1/2 bg-gray-300 uppercase text-center">
                 <h1>
                     <Link :href="route('products.show', product)">View Product</Link>
                 </h1>
             </div>
-            <div class="w-1/2 bg-primary text-white uppercase text-center">
-                <button @click="addToCart">Add To Cart</button>
+            <div class="w-1/2 bg-red-500 text-white uppercase text-center">
+                <button @click="removeToCart">Remove Product</button>
             </div>
         </div>
     </div>

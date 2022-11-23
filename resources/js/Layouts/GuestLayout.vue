@@ -1,12 +1,32 @@
-<script setup>
+<script>
 import ApplicationLogo from '@/Components/ApplicationLogo.vue';
 import { Link, useForm } from '@inertiajs/inertia-vue3';
+import { mapGetters } from 'vuex';
 
-const formLogout = useForm();
 
-const logout = () => {
-    formLogout.post(route('logout'));
+export default {
+
+    setup() {
+        const formLogout = useForm();
+        const logout = () => {
+            formLogout.post(route('logout'));
+        }
+
+        return { formLogout, logout };
+    },
+
+    components: {
+        Link,
+        ApplicationLogo
+    },
+
+    computed: {
+        ...mapGetters(['cartCount']),
+    },
+
 }
+
+
 
 </script>
 
@@ -42,7 +62,11 @@ const logout = () => {
                             <Link :href="route('login')">Signin</Link>
                         </li>
                     </template>
-                    <li><a class="btn btn-primary text-white text-sm px-3"><i class="fa fa-cart-shopping"></i> Cart</a></li>
+                    <li>
+                        <Link class="btn btn-primary text-white text-sm px-3" :href="route('shops.cart')" >
+                            <i class="fa fa-cart-shopping"></i> Cart {{ cartCount }}
+                        </Link>
+                    </li>
                 </ul>
             </div>
         </div>

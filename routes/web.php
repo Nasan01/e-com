@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ShopController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -24,5 +25,9 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::resource('products', ProductController::class);
+
+// Route about the shop
+
+Route::get('/shop/cart', [ShopController::class, 'cart'])->name('shops.cart');
 
 require __DIR__.'/auth.php';
