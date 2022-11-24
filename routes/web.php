@@ -29,5 +29,6 @@ Route::resource('products', ProductController::class);
 // Route about the shop
 
 Route::get('/shop/cart', [ShopController::class, 'cart'])->name('shops.cart');
+Route::post('/shop/cart', [ShopController::class, 'store'])->name('shops.cart.store');
 
 require __DIR__.'/auth.php';

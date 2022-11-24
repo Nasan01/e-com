@@ -1,6 +1,17 @@
-<script setup>
+<script>
+import { mapMutations } from 'vuex'
 
-const props = defineProps(['product']);
+export default {
+    props: ['product'],
+
+    methods: {
+        ...mapMutations(['add']),
+
+        addToCart(e) {
+            this.add(this.product);
+        }
+    }
+}
 
 </script>
 
@@ -23,7 +34,7 @@ const props = defineProps(['product']);
             <div>
                 <p>In Stock</p>
                 <p class="px-3 py-1 w-32 text-center rounded bg-primary text-white my-2">{{ product.category.name }}</p>
-                <button class="btn btn-primary w-80 text-white my-2">Add To Cart</button>
+                <button class="btn btn-primary w-80 text-white my-2" @click="addToCart">Add To Cart</button>
             </div>
         </div>
     </div>

@@ -53,6 +53,10 @@ const store = createStore({
             state.cart = state.cart.filter(c => c.id !== payload.id);
         },
 
+        clear(state) {
+            state.cart = [];
+        },
+
         calculateTotal(state, payload) {
             const cartId = state.cart.indexOf(payload.cart);
 

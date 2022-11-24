@@ -36,7 +36,7 @@ export default {
 </script>
 
 <template>
-    <div class="flex flex-col w-80 m-6 shadow-lg bg-white text-gray-600 rounded overflow-hidden hover:scale-110 hover:shadow-2xl transition duration-500">
+    <div class="flex flex-col w-80 m-6 shadow-lg bg-base-100 text-gray-600 rounded overflow-hidden hover:scale-110 hover:shadow-2xl transition duration-500">
         <legend>
             <img
                 :src="'/assets/images/'+product.illustration"
@@ -63,10 +63,10 @@ export default {
             </h4>
         </div>
         <div class="m-3 text-xs">
-            <label for="quantity m-2">Quantity : </label>
+            <label for="quantity m-2" class="w-1/5">Quantity : </label>
             <input
                 type="number"
-                class="w-full px-4 py-1 rounded focus:border-primary"
+                class="w-4/5 px-4 py-1 rounded focus:border-primary border border-gray-200 bg-gray-100"
                 :value="quantity"
                 @input="handleQuantityChange"
                 min="1"
@@ -79,7 +79,7 @@ export default {
                 </h1>
             </div>
             <div class="w-1/2 bg-red-500 text-white uppercase text-center">
-                <button @click="removeToCart">Remove Product</button>
+                <button @click="removeToCart">Remove Product <i class="fa fa-trash"></i> </button>
             </div>
         </div>
     </div>
