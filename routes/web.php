@@ -28,7 +28,7 @@ Route::get('/dashboard', function () {
 Route::resource('products', ProductController::class);
 
 // Route about the shop
-
+Route::get('/shop', [ShopController::class, 'index'])->name('shops.index');
 Route::get('/shop/cart', [ShopController::class, 'cart'])->name('shops.cart');
 Route::post('/shop/cart', [ShopController::class, 'store'])->name('shops.cart.store');
 

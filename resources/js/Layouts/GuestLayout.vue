@@ -44,7 +44,7 @@ export default {
                         <Link :href="route('home')">Home</Link>
                     </li>
                     <li>
-                        <Link href="#">Shop</Link>
+                        <Link :href="route('shops.index')">Shop</Link>
                     </li>
                     <template v-if="$page.props.auth.user">
                         <li>

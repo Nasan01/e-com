@@ -19,7 +19,7 @@ const isTitle = computed(() => props.title === 'New Arrival');
         <LatestProduct :products="props.latestProducts">
             <template #title>
                 <template v-if="isTitle">
-                    <h1>{{ props.title }}</h1>
+                    <h1 class="text-2xl pl-12 pt-2">{{ props.title }}</h1>
                 </template>
                 <template v-else>
                     <b>{{ props.title }}</b>

@@ -3,12 +3,36 @@
 namespace App\Http\Controllers;
 
 use App\Models\Delivery;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
 
 class ShopController extends Controller
 {
+
+
+    private $product;
+
+    public function __construct()
+    {
+        $this->product = new Product();
+    }
+
+    /**
+     *
+     * @return \Inertia\Response
+     */
+    public function index(): Response
+    {
+
+        $products = Product::with('category')->get();
+
+        return Inertia::render('Shop/Index', [
+            'products' => $products
+        ]);
+    }
+
     /**
      * Only show the Cart page but the cart data is handled by the front
      *
