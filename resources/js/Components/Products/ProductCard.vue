@@ -22,7 +22,7 @@ export default {
 </script>
 
 <template>
-    <div class="flex flex-col w-80 m-6 shadow-lg bg-white text-gray-600 rounded overflow-hidden hover:scale-110 hover:shadow-2xl transition duration-500">
+    <div class="flex flex-col w-80 m-6 shadow-lg bg-base-100 text-gray-600 rounded overflow-hidden hover:scale-110 hover:shadow-2xl transition duration-500">
         <legend>
             <img
                 :src="'/assets/images/'+product.illustration"

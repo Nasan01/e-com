@@ -19,6 +19,7 @@ use Inertia\Inertia;
 */
 
 Route::get("/", [HomeController::class, "index"])->name('home');
+Route::post("/", [HomeController::class, "index"])->name('home.products.search');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
