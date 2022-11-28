@@ -4,7 +4,11 @@ E-commerce web application built using VueJS & Laravel
 
 ## screen shots
 
-
+<img src="https://github.com/Nasan01/e-com/blob/main/screenshots/home.png" alt="homepage" title="Optional title">
+<img src="https://github.com/Nasan01/e-com/blob/main/screenshots/login.png" alt="loginpage" title="Optional title">
+<img src="https://github.com/Nasan01/e-com/blob/main/screenshots/register.png" alt="registerpage" title="Optional title">
+<img src="https://github.com/Nasan01/e-com/blob/main/screenshots/cart.png" alt="cart1page" title="Optional title">
+<img src="https://github.com/Nasan01/e-com/blob/main/screenshots/cart1.png" alt="cartPage" title="Optional title">
 
 ## Installation
 
